@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Domaine List</h1>
+  <ul>
+    {% for domaine in domaines %}
+      <li><a href="{% url 'domaine_detail' domaine.pk %}">{{ domaine }}</a></li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'domaine_create' %}">Create Domaine</a>
+{% endblock %}

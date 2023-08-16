@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Audio Detail</h1>
+  <p><strong>Domaine:</strong> {{ audio.domaine }}</p>
+  <p><strong>Auteur:</strong> {{ audio.auteur }}</p>
+  <p><strong>Date:</strong> {{ audio.date }}</p>
+  <p><strong>Audio:</strong> <audio controls><source src="{{ audio.audio.url }}" type="audio/mpeg"></audio></p>
+  <a href="{% url 'audio_update' audio.pk %}">Edit</a>
+  <a href="{% url 'audio_delete' audio.pk %}">Delete</a>
+{% endblock %}

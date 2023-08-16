@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Audio List</h1>
+  <ul>
+    {% for audio in audios %}
+      <li><a href="{% url 'audio_detail' audio.pk %}">{{ audio }}</a></li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'audio_create' %}">Create Audio</a>
+{% endblock %}
